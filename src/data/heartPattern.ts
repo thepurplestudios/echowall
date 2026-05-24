@@ -1,0 +1,10 @@
+const heartPattern = [
+  "00111100",
+  "01111110",
+  "11111111",
+  "11111111",
+  "01111110",
+  "00111100",
+];
+
+export default heartPattern;
