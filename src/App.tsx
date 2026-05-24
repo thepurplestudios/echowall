@@ -1,12 +1,12 @@
-import WallScene from "./components/wall/WallScene";
 import Sidebar from "./components/sidebar/Sidebar";
+import WallScene from "./components/wall/WallScene";
 
 function App() {
   return (
-    <main className="flex min-h-screen bg-[#f5f1eb] text-black">
+    <div className="flex min-h-screen bg-[#e9e3da]">
       <Sidebar />
       <WallScene />
-    </main>
+    </div>
   );
 }
 

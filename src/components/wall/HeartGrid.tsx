@@ -3,7 +3,7 @@ import Pixel from "./Pixel";
 
 function HeartGrid() {
   return (
-    <div className="grid grid-cols-8 gap-3">
+    <div className="grid grid-cols-8 gap-2">
       {heartPattern.map((row, rowIndex) =>
         row
           .split("")
