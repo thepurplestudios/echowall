@@ -1,18 +1,17 @@
-import heartPattern from "../../data/heartPattern";
-import Pixel from "./Pixel";
+import CokeHeart from "./CokeHeart";
 
-function HeartGrid() {
+export default function HeartGrid() {
   return (
-    <div className="grid grid-cols-8 gap-2">
-      {heartPattern.map((row, rowIndex) =>
-        row
-          .split("")
-          .map((cell, cellIndex) => (
-            <Pixel key={`${rowIndex}-${cellIndex}`} active={cell === "1"} />
-          )),
-      )}
-    </div>
+    <section
+      className="
+        flex
+        items-center
+        justify-center
+        w-full
+        h-screen
+      "
+    >
+      <CokeHeart />
+    </section>
   );
 }
-
-export default HeartGrid;

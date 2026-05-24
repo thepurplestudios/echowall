@@ -1,19 +1,34 @@
-import heartPattern from "../../data/heartPattern";
+import { heartPattern } from "../../data/heartPattern";
 import CokePixel from "./CokePixel";
 
-function CokeHeart() {
+export default function CokeHeart() {
   return (
-    <div className="relative">
-      <div className="grid grid-cols-20 gap-[6px]">
-        {heartPattern
-          .join("")
-          .split("")
-          .map((cell, index) => (
-            <CokePixel key={index} active={cell === "1"} />
-          ))}
-      </div>
+    <div
+      className="
+        grid
+        gap-x-[14px] gap-y-[10px]
+        place-items-center
+      "
+      style={{
+        gridTemplateColumns: `repeat(${heartPattern[0].length}, 48px)`,
+      }}
+    >
+      {heartPattern.map((row: string, rowIndex: number) =>
+        row.split("").map((cell: string, colIndex: number) => {
+          const active = cell === "1";
+
+          return (
+            <div
+              key={`${rowIndex}-${colIndex}`}
+              className={`flex items-center justify-center ${
+                !active ? "opacity-0 pointer-events-none" : ""
+              }`}
+            >
+              <CokePixel active={active} highlight={active} />{" "}
+            </div>
+          );
+        }),
+      )}
     </div>
   );
 }
-
-export default CokeHeart;
