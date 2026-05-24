@@ -3,70 +3,52 @@ type CokePixelProps = {
   highlight: boolean;
 };
 
-export default function CokePixel({ active, highlight }: CokePixelProps) {
+export default function CokePixel({ highlight }: CokePixelProps) {
   return (
     <div
       className="
         relative
-        w-[44px]
+        w-[38px]
         h-[82px]
         rounded-[6px]
-        transition-all
-        duration-500
-        flex
-        items-center
+        flex items-center
         justify-center
         overflow-hidden
       "
       style={{
-        transform: "translateZ(0)",
-
-        background: highlight
-          ? `
-    linear-gradient(
-      to right,
-      #bfbfbf 0%,
-      #ffffff 18%,
-      #eaeaea 35%,
-      #a8a8a8 50%,
-      #ffffff 70%,
-      #cfcfcf 100%
-    )
-  `
-          : `
-    linear-gradient(
-      to right,
-      #e0e0e0 0%,
-      #f8f8f8 30%,
-      #d6d6d6 60%,
-      #eeeeee 100%
-    )
-  `,
+        background: `
+          linear-gradient(
+            to right,
+            #9a9a9a 0%,
+            #dcdcdc 15%,
+            #ffffff 30%,
+            #cfcfcf 45%,
+            #8f8f8f 60%,
+            #e8e8e8 75%,
+            #b0b0b0 100%
+          )
+        `,
         boxShadow: `
-  inset -2px 0 4px rgba(0,0,0,0.12),
-  inset 2px 0 5px rgba(255,255,255,0.9),
-  0 12px 22px rgba(0,0,0,0.12)
-`,
-
-        border: highlight
-          ? "1px solid rgba(255,255,255,0.65)"
-          : "1px solid rgba(255,255,255,0.45)",
+          inset -4px 0 6px rgba(0,0,0,0.25),
+          inset 3px 0 5px rgba(255,255,255,0.5),
+          4px 8px 12px rgba(0,0,0,0.18)
+        `,
       }}
     >
-      {/* TOP METAL RIM */}
+      {/* TOP RIM */}
       <div
         className="
           absolute
           top-[5px]
           left-1/2
           -translate-x-1/2
-          w-[72%]
-          h-[6px]
+          h-[3px]
+          w-[58%]
           rounded-full
         "
         style={{
-          background: "linear-gradient(to right, #d9d9d9, #ffffff, #cfcfcf)",
-          opacity: highlight ? 1 : 0.6,
+          background: "linear-gradient(to right, #8f8f8f, #ffffff, #8f8f8f)",
+          opacity: 0.7,
         }}
       />
 
@@ -77,34 +59,45 @@ export default function CokePixel({ active, highlight }: CokePixelProps) {
           bottom-[5px]
           left-1/2
           -translate-x-1/2
-          w-[72%]
-          h-[6px]
+          h-[4px]
+          w-[65%]
           rounded-full
         "
         style={{
-          background: "linear-gradient(to right, #bdbdbd, #ededed, #bdbdbd)",
-          opacity: highlight ? 1 : 0.5,
+          background: "linear-gradient(to right, #6f6f6f, #dcdcdc, #6f6f6f)",
+          opacity: 0.6,
         }}
       />
 
-      {/* LIGHT REFLECTION */}
+      {/* SIDE CURVATURE */}
+      <div
+        className="absolute inset-0 rounded-[6px]"
+        style={{
+          boxShadow: `
+            inset 6px 0 10px rgba(0,0,0,0.12),
+            inset -6px 0 10px rgba(255,255,255,0.5)
+          `,
+        }}
+      />
+
+      {/* LIGHT REFLECTION STRIP */}
       <div
         className="
           absolute
-          left-[7px]
+          left-[8px]
           top-[10px]
           h-[65%]
-          w-[4px]
+          w-[2px]
           rounded-full
-          blur-[1px]
+          blur-[0.5px]
         "
         style={{
-          background: "rgba(255,255,255,0.85)",
-          opacity: highlight ? 0.9 : 0.35,
+          background: "rgba(255,255,255,0.9)",
+          opacity: 0.8,
         }}
       />
 
-      {/* LOGO (only for highlighted cans) */}
+      {/* LOGO */}
       {highlight && (
         <div
           className="
@@ -113,28 +106,23 @@ export default function CokePixel({ active, highlight }: CokePixelProps) {
             items-center
             leading-none
             select-none
-            translate-y-[2px]
+            translate-y-[1px]
           "
         >
           <span
             className="
-              text-[8px]
+              text-[7px]
               italic
-              font-light
-              tracking-tight
-              text-red-400
-              opacity-80
+              text-red-600
             "
-            style={{
-              fontFamily: "Georgia, serif",
-            }}
+            style={{ fontFamily: "Georgia, serif" }}
           >
             diet
           </span>
 
           <span
             className="
-              text-[17px]
+              text-[13px]
               leading-[0.9]
               text-red-600
             "

@@ -6,7 +6,7 @@ export default function CokeHeart() {
     <div
       className="
         grid
-        gap-x-[14px] gap-y-[10px]
+        gap-x-[0px] gap-y-[8px]
         place-items-center
       "
       style={{
@@ -20,7 +20,7 @@ export default function CokeHeart() {
           return (
             <div
               key={`${rowIndex}-${colIndex}`}
-              className={`flex items-center justify-center ${
+              className={`flex items-center justify-center -mt-[6px] ${
                 !active ? "opacity-0 pointer-events-none" : ""
               }`}
             >
