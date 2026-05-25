@@ -1,6 +1,5 @@
 import ModeSection from "./ModeSection";
 import InteractionSection from "./InteractionSection";
-import IntensitySlider from "./IntensitySlider";
 
 function Sidebar() {
   return (
@@ -44,10 +43,10 @@ function Sidebar() {
         </div>
 
         {/* SCROLLABLE CONTENT */}
-        <div className="flex-1 overflow-y-auto pr-2 space-y-6">
+        <div className="flex-1 overflow-y-auto pr-2 space-y-6 no-scrollbar">
+          {" "}
           <ModeSection />
           <InteractionSection />
-          <IntensitySlider />
         </div>
 
         {/* FOOTER */}

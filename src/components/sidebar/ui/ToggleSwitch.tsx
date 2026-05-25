@@ -4,12 +4,14 @@ type ToggleProps = {
   label: string;
   active?: boolean;
   icon?: React.ReactNode;
+  onClick?: () => void;
 };
 
 export default function ToggleSwitch({
   label,
   active = false,
   icon,
+  onClick,
 }: ToggleProps) {
   return (
     <div className="flex items-center justify-between">
@@ -28,6 +30,7 @@ export default function ToggleSwitch({
         className="w-11 h-5 rounded-full p-[2px] cursor-pointer"
       >
         <motion.div
+          onClick={onClick}
           animate={{
             x: active ? 20 : 0,
           }}

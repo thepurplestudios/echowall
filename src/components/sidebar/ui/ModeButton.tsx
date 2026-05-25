@@ -4,12 +4,14 @@ type ModeButtonProps = {
   label: string;
   active?: boolean;
   icon?: React.ReactNode;
+  onClick?: () => void;
 };
 
 export default function ModeButton({
   label,
   active = false,
   icon,
+  onClick,
 }: ModeButtonProps) {
   return (
     <motion.div
@@ -45,6 +47,7 @@ export default function ModeButton({
       >
         {/* 🔥 subtle glow sweep on hover */}
         <motion.div
+          onClick={onClick}
           className="absolute inset-0"
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
